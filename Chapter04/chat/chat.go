@@ -19,7 +19,7 @@ type Room struct {
 	users []string
 }
 
-// NewRoom creates a new chat root instance that ued pub to broadcast messages.
+// NewRoom creates a new chat root instance that uses pub to broadcast messages.
 func NewRoom(pub Publisher) *Room {
 	return &Room{pub: pub}
 }

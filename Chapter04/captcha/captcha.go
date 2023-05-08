@@ -24,6 +24,7 @@ func ChallengeUser(c Challenger, p Prompter) bool {
 	img, expAnswer := c.Challenge()
 	userAnswer := p.Prompt(img)
 
+	// Constant-time checks avoid timing attacks.
 	if subtle.ConstantTimeEq(int32(len(expAnswer)), int32(len(userAnswer))) == 0 {
 		return false
 	}
